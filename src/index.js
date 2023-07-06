@@ -4,6 +4,27 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+
+import Features from './components/Features';
+import Layout from './components/Layout';
+
+export const features = '/features'
+
+
+export const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Layout />,
+    children: [
+      {
+        path: '/features',
+        element: <Features />
+      }
+    ]
+  },
+])
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
